@@ -24,7 +24,7 @@ function Newpage({ params }) {
     e.preventDefault();
 
     if (params.id) {
-      const res = await  fetch(`/api/tasks/${params.id}`,{
+      const res = await  fetch("https://crud-next-l1337c6yz-diony-caros-projects.vercel.app/",{
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -38,7 +38,7 @@ function Newpage({ params }) {
       const data = await res.json();
       console.log(data); 
     } else {
-      const res = await fetch("/api/tasks", {
+      const res = await fetch("https://crud-next-l1337c6yz-diony-caros-projects.vercel.app/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -91,7 +91,7 @@ function Newpage({ params }) {
             className="bg-rose-500 hover:bg-rose-800 text-white font-bold py-2 px-4 rounded-md ml-4"
             type="button"
             onClick={ async() => {
-              const res = await fetch(`/api/tasks/${params.id}`,{
+              const res = await fetch("https://crud-next-l1337c6yz-diony-caros-projects.vercel.app/",{
                 method: "DELETE"
               })
               const data = await res.json();
