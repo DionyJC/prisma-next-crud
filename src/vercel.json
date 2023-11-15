@@ -1,0 +1,14 @@
+{
+    "builds": [
+      {
+        "src": "Progamacion/Next/crud-next-prisma",
+        "use": "@vercel/node",
+        "config": {
+          "maxLambdaSize": "50mb",
+          "NODE_ENV": "production",
+          "PRISMA_GENERATE_BEFORE_BUILD": "true"
+        }
+      }
+    ]
+  }
+  
