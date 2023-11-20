@@ -103,19 +103,24 @@ function Newpage({ params }) {
         </button>
         {params.id && (
           <button
-            className="bg-rose-500 hover:bg-rose-800 text-white font-bold py-2 px-4 rounded-md ml-4"
-            type="button"
-            onClick={ async() => {
-              const res = await fetch("https://vercel.com/diony-caros-projects/crud-next",{
-                method: "DELETE"
-              })
-              const data = await res.json();
-              router.refresh();
-              router.push("/")
-            }}
-          >
-            Eliminar
-          </button>
+    className="bg-rose-500 hover:bg-rose-800 text-white font-bold py-2 px-4 rounded-md ml-4"
+    type="button"
+    onClick={async() => {
+      const res = await fetch("https://vercel.com/diony-caros-projects/crud-next", {
+        method: "DELETE",
+        headers: {
+          "Access-Control-Allow-Origin": "https://vercel.com/diony-caros-projects/crud-next",
+        },
+      });
+
+      const data = await res.json();
+
+      router.refresh();
+      router.push("/");
+    }}
+  >
+    Eliminar
+  </button>
         )}
       </form>
     </div>
