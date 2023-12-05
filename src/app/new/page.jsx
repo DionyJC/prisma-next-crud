@@ -13,7 +13,7 @@ function Newpage({ params }) {
     if (params.id) {
       fetch(`/api/tasks/${params.id}`, {
         headers: {
-          "Access-Control-Allow-Origin": "https://vercel.com/diony-caros-projects/crud-next",
+          "Access-Control-Allow-Origin": "https://crud-next-digpjwvzd-diony-caros-projects.vercel.app/",
         },
       })
         .then((res) => res.json())
@@ -29,11 +29,11 @@ function Newpage({ params }) {
 
     try {
       if (params.id) {
-        const res = await fetch("https://vercel.com/diony-caros-projects/crud-next", {
+        const res = await fetch("https://crud-next-digpjwvzd-diony-caros-projects.vercel.app/", {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "https://vercel.com/diony-caros-projects/crud-next",
+            "Access-Control-Allow-Origin": "https://crud-next-digpjwvzd-diony-caros-projects.vercel.app/",
           },
           body: JSON.stringify({
             title,
@@ -45,11 +45,11 @@ function Newpage({ params }) {
         // const data = await res.json();
         // console.log(data);
       } else {
-        const res = await fetch("https://vercel.com/diony-caros-projects/crud-next", {
+        const res = await fetch("https://crud-next-digpjwvzd-diony-caros-projects.vercel.app/", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "https://vercel.com/diony-caros-projects/crud-next",
+            "Access-Control-Allow-Origin": "https://crud-next-digpjwvzd-diony-caros-projects.vercel.app/",
           },
           body: JSON.stringify({
             title,
@@ -106,10 +106,10 @@ function Newpage({ params }) {
     className="bg-rose-500 hover:bg-rose-800 text-white font-bold py-2 px-4 rounded-md ml-4"
     type="button"
     onClick={async() => {
-      const res = await fetch("https://vercel.com/diony-caros-projects/crud-next", {
+      const res = await fetch("https://crud-next-digpjwvzd-diony-caros-projects.vercel.app/", {
         method: "DELETE",
         headers: {
-          "Access-Control-Allow-Origin": "https://vercel.com/diony-caros-projects/crud-next",
+          "Access-Control-Allow-Origin": "https://crud-next-digpjwvzd-diony-caros-projects.vercel.app/",
         },
       });
 
