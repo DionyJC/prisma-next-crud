@@ -11,7 +11,7 @@ function Newpage({ params }) {
 
   useEffect(() => {
     if (params.id) {
-      fetch(`/api/tasks/${params.id}`, {
+      fetch("https://crud-next-digpjwvzd-diony-caros-projects.vercel.app/", {
         headers: {
           "Access-Control-Allow-Origin": "https://crud-next-digpjwvzd-diony-caros-projects.vercel.app/",
         },
