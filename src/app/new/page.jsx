@@ -12,9 +12,7 @@ function Newpage({ params }) {
   useEffect(() => {
     if (params.id) {
       fetch(`/api/tasks/${params.id}`, {
-        headers: {
-          "Access-Control-Allow-Origin": "https://vercel.com/diony-caros-projects/crud-next",
-        },
+    
       })
         .then((res) => res.json())
         .then((data) => {
@@ -29,12 +27,8 @@ function Newpage({ params }) {
 
     try {
       if (params.id) {
-        const res = await fetch("https://vercel.com/diony-caros-projects/crud-next", {
+        const res = await fetch(`/api/tasks/${params.id}`, {
           method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "https://vercel.com/diony-caros-projects/crud-next",
-          },
           body: JSON.stringify({
             title,
             description,
@@ -45,12 +39,8 @@ function Newpage({ params }) {
         // const data = await res.json();
         // console.log(data);
       } else {
-        const res = await fetch("https://vercel.com/diony-caros-projects/crud-next", {
+        const res = await fetch("/api/tasks", {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "https://vercel.com/diony-caros-projects/crud-next",
-          },
           body: JSON.stringify({
             title,
             description,
@@ -106,7 +96,7 @@ function Newpage({ params }) {
             className="bg-rose-500 hover:bg-rose-800 text-white font-bold py-2 px-4 rounded-md ml-4"
             type="button"
             onClick={ async() => {
-              const res = await fetch("https://vercel.com/diony-caros-projects/crud-next",{
+              const res = await fetch(`/api/tasks/${params.id}`,{
                 method: "DELETE"
               })
               const data = await res.json();
