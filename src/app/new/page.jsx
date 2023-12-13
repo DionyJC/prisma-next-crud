@@ -11,16 +11,9 @@ function Newpage({ params }) {
 
   useEffect(() => {
     if (params.id) {
-<<<<<<< HEAD
-      fetch(`/api/tasks/${params.id}`, {
+      fetch(`/api/tasks/${params.id}`)
     
-=======
-      fetch("https://crud-next-digpjwvzd-diony-caros-projects.vercel.app/", {
-        headers: {
-          "Access-Control-Allow-Origin": "https://crud-next-digpjwvzd-diony-caros-projects.vercel.app/",
-        },
->>>>>>> 9171af7472bb88d0888c147a7cc7571394eb8d7d
-      })
+      
         .then((res) => res.json())
         .then((data) => {
           setTitle(data.title);
@@ -34,17 +27,9 @@ function Newpage({ params }) {
 
     try {
       if (params.id) {
-<<<<<<< HEAD
+
         const res = await fetch(`/api/tasks/${params.id}`, {
           method: "PUT",
-=======
-        const res = await fetch("https://crud-next-digpjwvzd-diony-caros-projects.vercel.app/", {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "https://crud-next-digpjwvzd-diony-caros-projects.vercel.app/",
-          },
->>>>>>> 9171af7472bb88d0888c147a7cc7571394eb8d7d
           body: JSON.stringify({
             title,
             description,
@@ -55,17 +40,9 @@ function Newpage({ params }) {
         // const data = await res.json();
         // console.log(data);
       } else {
-<<<<<<< HEAD
+
         const res = await fetch("/api/tasks", {
           method: "POST",
-=======
-        const res = await fetch("https://crud-next-digpjwvzd-diony-caros-projects.vercel.app/", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "https://crud-next-digpjwvzd-diony-caros-projects.vercel.app/",
-          },
->>>>>>> 9171af7472bb88d0888c147a7cc7571394eb8d7d
           body: JSON.stringify({
             title,
             description,
@@ -118,7 +95,6 @@ function Newpage({ params }) {
         </button>
         {params.id && (
           <button
-<<<<<<< HEAD
             className="bg-rose-500 hover:bg-rose-800 text-white font-bold py-2 px-4 rounded-md ml-4"
             type="button"
             onClick={ async() => {
@@ -132,26 +108,8 @@ function Newpage({ params }) {
           >
             Eliminar
           </button>
-=======
-    className="bg-rose-500 hover:bg-rose-800 text-white font-bold py-2 px-4 rounded-md ml-4"
-    type="button"
-    onClick={async() => {
-      const res = await fetch("https://crud-next-digpjwvzd-diony-caros-projects.vercel.app/", {
-        method: "DELETE",
-        headers: {
-          "Access-Control-Allow-Origin": "https://crud-next-digpjwvzd-diony-caros-projects.vercel.app/",
-        },
-      });
 
-      const data = await res.json();
-
-      router.refresh();
-      router.push("/");
-    }}
-  >
-    Eliminar
-  </button>
->>>>>>> 9171af7472bb88d0888c147a7cc7571394eb8d7d
+  
         )}
       </form>
     </div>
